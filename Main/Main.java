@@ -1,10 +1,14 @@
 package Main;
 
+import CefTest.App;
+import Extra.ExtraMain;
 import FXGui.*;
 import Aufgaben.*;
 import GUI.TestGUI;
+import HTMLGui.HTMLGui;
 import Taschenrechner.Taschenrechner;
 import Taschenrechner.MathTest;
+import Trainingslager.*;
 import com.formdev.flatlaf.*;
 import javafx.application.Application;
 
@@ -13,13 +17,22 @@ import javax.swing.*;
 public class Main {
     public static TestGUI win;
     public static boolean isDev = false;
+    private static HTMLGui htmlGui;
 
     public static void main(String[] args){
         //create Window
         //createUI();
 
         //Create FXGui
-        startFXGui();
+        //startFXGui();
+
+        //create HTML Gui
+        //htmlGui = new HTMLGui();
+
+        //Cef
+        //CefTest.App.main(args);
+        //App app = new App();
+        //new Thread(() -> new App.start());
 
         //Aufgabe 1
         //RechnungsAufgabe.rechnungsAufgabe(win);
@@ -43,10 +56,30 @@ public class Main {
         //SummeAllerZahlen.init();
 
         //Aufgabe 8
-        Taschenrechner rechner = new Taschenrechner();
-        rechner.initTaschenrechner();
+        //Taschenrechner rechner = new Taschenrechner();
+        //rechner.initTaschenrechner();
         //rechner.test(12, 12.5);
         //MathTest.start();
+
+        //Aufgabe 9
+        //IOTest.Init();
+
+        //Trainingslager
+        //Alterspruefung.init();
+        //Bestellung.init(12,14,12);
+        //Fuehrerschein.start();
+        //Bmi.start();
+
+        //Traininglager Schleifen
+        //Wurzel.start();
+        //Fakultae.start();
+        //Quadratsummen.start();
+        //GeometrischeReihe.start();
+        //Quadrat.start();
+        ExtraMax.start();
+
+        //Extra
+        //ExtraMain.main(args);
     }
 
     private static void createUI(){
@@ -66,4 +99,5 @@ public class Main {
         //FXGui gui = new FXGui(args);
         //gui.initGui(args);
     }
+
 }

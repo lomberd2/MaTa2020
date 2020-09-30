@@ -120,21 +120,34 @@ public class MainForm {
             //Minus
             String[] split = input.split("-");
 
+            int i = 0;
+            for (String s: split) {
+                System.out.println(s + " + " + i);
+                i++;
+            }
             nummer1 = Double.parseDouble(split[0]);
             nummer2 = Double.parseDouble(split[1]);
 
             return Taschenrechner.minus(nummer1, nummer2);
             //System.out.println("Das Ergebniss ist: " + minus(nummer1, nummer2));
-        }else if(input.contains("+")){
+        }
+        if(input.contains("+")){
             //Plus
             String[] split = input.split("\\+");
+
+            int i = 0;
+            for (String s: split) {
+                System.out.println(s + " + " + i);
+                i++;
+            }
 
             nummer1 = Double.parseDouble(split[0]);
             nummer2 = Double.parseDouble(split[1]);
 
             return Taschenrechner.plus(nummer1, nummer2);
             //System.out.println("Das Ergebniss ist: " + plus(nummer1, nummer2));
-        }else if(input.contains("/")){
+        }
+        if(input.contains("/")){
             //Geteilt
             String[] split = input.split("/");
 
@@ -143,7 +156,8 @@ public class MainForm {
 
             return Taschenrechner.divide(nummer1, nummer2);
             //System.out.println("Das Ergebniss ist: " + divide(nummer1, nummer2));
-        }else if(input.contains("*")) {
+        }
+        if(input.contains("*")) {
             //Mal
             String[] split = input.split("\\*");
 

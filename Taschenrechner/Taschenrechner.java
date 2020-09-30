@@ -37,7 +37,8 @@ public class Taschenrechner {
 
             }
             catch (Exception e){
-                System.out.println(e);
+                e.printStackTrace();
+                //System.err.println(e);
             }
         }
     }
@@ -87,7 +88,7 @@ public class Taschenrechner {
 
             outputErgebniss(input, multi(nummer1, nummer2));
         }else if(input.equals("exit")){
-            System.out.println("Beende Taschenrechner");
+            stringOut("Beende Taschenrechner");
             isTaschenrechnerRunning = false;
         }else if(input.contains("p")){
             //Potenz
@@ -109,8 +110,8 @@ public class Taschenrechner {
 
             outputErgebniss(input, Math.sqrt(Double.parseDouble(split[1])));
         }else{
-            System.out.println("Fehler: Es ist kein Opperator Vorhanden in deiner Eingabe.");
-            System.out.println("");
+            stringOut("Fehler: Es ist kein Opperator Vorhanden in deiner Eingabe.");
+            stringOut("");
         }
     }
 
@@ -126,8 +127,8 @@ public class Taschenrechner {
         }
     }
 
-    private void outputErgebniss(String Rechnung, double ergebniss){
-        stringOut(Rechnung + " = " + ergebniss);
+    private void outputErgebniss(String rechnung, double ergebniss){
+        stringOut(rechnung + " = " + ergebniss);
         stringOut("Das Ergebniss lautet: " + ergebniss);
     }
 
