@@ -9,7 +9,7 @@ public class ExtraMax {
         while(true) {
             int wurfel1 = getRandomNumber(1, 6);
             int wurfel2 = getRandomNumber(1, 6);
-            
+
             System.out.println("Würfel1: " + wurfel1 + " Würfel2: " + wurfel2);
 
             boolean isMaxchen = (wurfel1 == 1 && wurfel2 == 2) || (wurfel1 == 2 && wurfel2 == 1);

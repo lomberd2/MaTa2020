@@ -9,6 +9,7 @@ import HTMLGui.HTMLGui;
 import Taschenrechner.Taschenrechner;
 import Taschenrechner.MathTest;
 import Trainingslager.*;
+import Zellwachstum.Zellwachstum;
 import com.formdev.flatlaf.*;
 import javafx.application.Application;
 
@@ -76,7 +77,16 @@ public class Main {
         //Quadratsummen.start();
         //GeometrischeReihe.start();
         //Quadrat.start();
-        ExtraMax.start();
+        //ExtraMax.start();
+        //Schaltjahre.start();
+        //Ostern.start();
+        //Pi.start();
+
+        //PQ Formel
+        //PqFormel.start();
+
+        //Zellwachstum
+        Zellwachstum.start();
 
         //Extra
         //ExtraMain.main(args);

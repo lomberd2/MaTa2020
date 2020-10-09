@@ -6,6 +6,7 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 import org.cef.CefApp;
 import org.cef.CefClient;
+import org.cef.CefSettings;
 import org.cef.OS;
 import org.cef.browser.CefBrowser;
 import org.cef.browser.CefFrame;
@@ -16,24 +17,20 @@ import org.cef.network.CefRequest;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseWheelEvent;
-import java.awt.event.MouseWheelListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import java.awt.event.*;
 
 import static java.awt.event.MouseWheelEvent.WHEEL_UNIT_SCROLL;
 
 public class App {
     public App app;
-    final JFrame mainFrame;
-    final CefApp cefApp;
-    final CefClient client;
-    final CefBrowser browser;
-    final Component browserUI;
+    private JFrame mainFrame;
+    private CefApp cefApp;
+    private CefClient client;
+    private CefBrowser browser;
+    private Component browserUI;
 
     public App(){
-        // Create a new frame for holding the browser ui
-        mainFrame = new JFrame();
+
         /* * Gets the cef application singleton. It loads all resources
          * (native libraries etc.), initializes app...
          */
@@ -48,16 +45,23 @@ public class App {
          * Browser instances are responsible for rendering of
          * the browser's content.
          */
-        browser = client.createBrowser( "https://html5test.com/", OS.isWindows(), true);
+        browser = client.createBrowser( "https://google.com/", OS.isWindows(), false);
         /*
          * Returns the browser's ui component used for
          * rendering in a awt application
          */
         browserUI = browser.getUIComponent();
 
+        // Create a new frame for holding the browser ui
+        mainFrame = new JFrame();
+
         app = this;
 
         init();
+    }
+
+    public static void main(){
+
     }
 
     /**
@@ -65,20 +69,31 @@ public class App {
      */
     private void init(){
         setupSwingComponents();
-        setupEvents();
-        setupClientEvents();
+        //setupEvents();
+        //setupClientEvents();
+
         //Testing
-        setupBrowser();
+        //setupBrowser();
     }
 
     /**
      * Erstellt die Swing Componenten und Öffnet diese
      */
     private void setupSwingComponents(){
+        Button btn1 = new Button();
+        btn1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                browser.executeJavaScript("alert('test');","warnung", 0);
+            }
+        });
+
+        mainFrame.getContentPane().add(btn1, BorderLayout.PAGE_START);
+
         // Add the browser ui to this newly created frame
         mainFrame.getContentPane().add(browserUI, BorderLayout.CENTER);
         mainFrame.setSize(800, 600); mainFrame.setVisible(true);
-        mainFrame.setLocation(WindowFunctions.screenCenter(WindowFunctions.getScreenSize(), mainFrame.getSize()));
+        //mainFrame.setLocation(WindowFunctions.screenCenter(WindowFunctions.getScreenSize(), mainFrame.getSize()));
     }
 
     /**
@@ -98,17 +113,22 @@ public class App {
             }
         });
 
-        for (MouseWheelListener listener:browserUI.getMouseWheelListeners()) {
-            browserUI.removeMouseWheelListener(listener);
-        }
+        removeAllMouseListener();
+
         browserUI.addMouseWheelListener(new MouseWheelListener() {
             @Override
             public void mouseWheelMoved (MouseWheelEvent e){
                 CefFrame frame = browser.getMainFrame();
-                browser.executeJavaScript("window.scrollBy(" + 0 + "," + e.getPreciseWheelRotation() * 50 + ")", frame.getURL(), 0);
-                setupBrowser();
+                browser.executeJavaScript("window.scrollBy(" + 0 + "," + e.getPreciseWheelRotation() * 30 + ")", "Main", 0);
             }
         });
+
+    }
+
+    private void removeAllMouseListener(){
+        for (MouseWheelListener listener:browserUI.getMouseWheelListeners()) {
+            browserUI.removeMouseWheelListener(listener);
+        }
     }
 
     private void setupClientEvents(){
@@ -136,12 +156,11 @@ public class App {
                 return 0;
             }
         }, true);
-
         client.addMessageRouter(msgRouter);
     }
 
     private void setupBrowser(){
-        CefFrame frame = browser.getMainFrame();
-        frame.executeJavaScript("alert('test');", frame.getURL(), 0);
+        //CefFrame frame = browser.getMainFrame();
+        //frame.executeJavaScript("alert('test');", frame.getURL(), 0);
     }
 }
