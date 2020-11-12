@@ -1,0 +1,21 @@
+Loops:
+    => while - Use this if you are iterating and the deciding factor for looping or not is based merely on a condition. In this loop construct, keeping an index is only a secondary concern; everything should be based on the condition
+
+    => for - Use this if you are looping and your primary concern is the index of the array/collection/list. It is more useful to use a for if you are most likely to go through all the elements anyway, and in a particular order (e.g., going backwards through a sorted list, for example).
+
+    => do {
+        -> (do->while) Wird immer min. einmal ausgeführt.
+    }while()
+
+    => foreach - Use this if you merely need to go through your collection regardless of order.
+
+
+- Schleifenabbruch:
+    continue; Innerhalb einer Schleife. Springt zum ende der Schleife.
+    break; Wird verlassen;
+
+
+//Mathe
+=> Square Root / Wurzel von = math.sqrt();
+=> X hoch Y = Math.pow(x, y);
+=> Math.Abs(Y) = Wandelt Y in eine Absolute Positive Int,Double etc um

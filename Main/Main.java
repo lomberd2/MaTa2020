@@ -1,24 +1,25 @@
 package Main;
 
-import CefTest.App;
+//import CefTest.App;
+import ArrayAufgaben.Aufgaben;
 import Extra.ExtraMain;
-import FXGui.*;
+//import FXGui.*;
 import Aufgaben.*;
-import GUI.TestGUI;
-import HTMLGui.HTMLGui;
+//import GUI.TestGUI;
+//import HTMLGui.HTMLGui;
 import Taschenrechner.Taschenrechner;
 import Taschenrechner.MathTest;
 import Trainingslager.*;
-import Zellwachstum.Zellwachstum;
-import com.formdev.flatlaf.*;
-import javafx.application.Application;
+import Zellwachstum.*;
+//import com.formdev.flatlaf.*;
+//import javafx.application.Application;
 
-import javax.swing.*;
+//import javax.swing.*;
 
 public class Main {
-    public static TestGUI win;
+    //public static TestGUI win;
     public static boolean isDev = false;
-    private static HTMLGui htmlGui;
+    //private static HTMLGui htmlGui;
 
     public static void main(String[] args){
         //create Window
@@ -86,13 +87,29 @@ public class Main {
         //PqFormel.start();
 
         //Zellwachstum
-        Zellwachstum.start();
+        //Zellwachstum.start();
+        //Sparvertrag.start();
+
+        //Statistik
+        //Statistik.Temperatur.start();
 
         //Extra
         //ExtraMain.main(args);
+        /*System.out.println("Bitte geben Sie die länge des Arrays ein: ");
+        String[] testArrInt = IO.createStringArr(IO.readInteger());
+
+        for(String i: testArrInt){
+            System.out.println(i);
+        }*/
+
+        //Aufgaben.Summen();
+        //Aufgaben.Maxima();
+        //Aufgaben.Balkendiagramm();
+        //Aufgaben.TonsignalGlätten();
+        Aufgaben.BinaerAddition();
     }
 
-    private static void createUI(){
+    /*private static void createUI(){
         try {
             LookAndFeel laf = new FlatDarkLaf();
             UIManager.setLookAndFeel(laf);
@@ -101,11 +118,11 @@ public class Main {
         }catch (Exception e){
             System.out.println(e);
         }
-    }
+    }*/
 
     private static void startFXGui()
     {
-        new Thread(() -> Application.launch(FXGui.class)).start();
+        //new Thread(() -> Application.launch(FXGui.class)).start();
         //FXGui gui = new FXGui(args);
         //gui.initGui(args);
     }
