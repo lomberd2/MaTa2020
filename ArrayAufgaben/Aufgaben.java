@@ -136,16 +136,16 @@ public class Aufgaben {
 
         //System.out.println("Bitte geben sie den Input ein");
         //tonsignalInput = IO.createIntArray(10);
-        boolean startBerechnet = false;
+        //boolean startBerechnet = false;
         boolean checkSkipOthers = false;
 
         for(int i = 0; i < tonsignalConverter.length; i++){
             // I = 0,1
-            if(i == 0 || i == 1 && !startBerechnet){
+            if(i == 0 || i == 1 /*&& !startBerechnet */){
                 double mittelWertStart = (tonsignalConverter[0] + tonsignalConverter[1]) / 2;
                 tonsignalConverter[0] = mittelWertStart;
                 tonsignalConverter[1] = mittelWertStart;
-                startBerechnet = true;
+                //startBerechnet = true;
                 checkSkipOthers = true;
             }
 

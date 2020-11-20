@@ -1,16 +1,12 @@
 package Main;
 
 //import CefTest.App;
-import ArrayAufgaben.Aufgaben;
-import Extra.ExtraMain;
 //import FXGui.*;
-import Aufgaben.*;
 //import GUI.TestGUI;
 //import HTMLGui.HTMLGui;
-import Taschenrechner.Taschenrechner;
-import Taschenrechner.MathTest;
-import Trainingslager.*;
-import Zellwachstum.*;
+import ArrayAufgaben.Bubblesort;
+import ArrayAufgaben.Lagerbestand;
+import MiniGame.MiniGame;
 //import com.formdev.flatlaf.*;
 //import javafx.application.Application;
 
@@ -35,6 +31,10 @@ public class Main {
         //CefTest.App.main(args);
         //App app = new App();
         //new Thread(() -> new App.start());
+
+        //Game
+        //MiniGame.Start.init();
+        //MiniGame game = new MiniGame();
 
         //Aufgabe 1
         //RechnungsAufgabe.rechnungsAufgabe(win);
@@ -106,7 +106,9 @@ public class Main {
         //Aufgaben.Maxima();
         //Aufgaben.Balkendiagramm();
         //Aufgaben.TonsignalGlätten();
-        Aufgaben.BinaerAddition();
+        //Aufgaben.BinaerAddition();
+        //Lagerbestand.init();
+        Bubblesort.init();
     }
 
     /*private static void createUI(){
