@@ -6,6 +6,7 @@ package Main;
 //import HTMLGui.HTMLGui;
 import ArrayAufgaben.Bubblesort;
 import ArrayAufgaben.Lagerbestand;
+import ArrayAufgaben.Lotto;
 import MiniGame.MiniGame;
 //import com.formdev.flatlaf.*;
 //import javafx.application.Application;
@@ -108,7 +109,13 @@ public class Main {
         //Aufgaben.TonsignalGlätten();
         //Aufgaben.BinaerAddition();
         //Lagerbestand.init();
-        Bubblesort.init();
+        //Bubblesort.init();
+        //Lotto.init();
+
+        //Matrizen
+        //Matrizen.MatrizenTest.Aufgabe1();
+        //Matrizen.MatrizenTest.Aufgabe2();
+        //Matrizen.MatrizenTest.Aufgabe3();
     }
 
     /*private static void createUI(){
