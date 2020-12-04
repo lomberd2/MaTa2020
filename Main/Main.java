@@ -116,6 +116,10 @@ public class Main {
         //Matrizen.MatrizenTest.Aufgabe1();
         //Matrizen.MatrizenTest.Aufgabe2();
         //Matrizen.MatrizenTest.Aufgabe3();
+        //Matrizen.Kino.start();
+        //Matrizen.DreiGewinnt.start();
+        //Matrizen.DreiGewinntForDummies.start();
+        Matrizen.Lieferbeziehungen.start();
     }
 
     /*private static void createUI(){
